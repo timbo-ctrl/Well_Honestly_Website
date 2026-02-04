@@ -240,20 +240,19 @@
         /* ============ HERO - FULL BLEED VIDEO STYLE ============ */
         .hero {
             min-height: 100vh;
-            min-height: -webkit-fill-available; /* Safari mobile fix */
             display: flex;
             align-items: center;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             background: var(--cream);
         }
 
         .hero-media {
             position: absolute;
-            top: -50px;
+            top: 0;
             right: 0;
             width: 55%;
-            height: calc(100% + 50px);
+            height: 100%;
             background: var(--cream);
             overflow: hidden;
             clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
@@ -1271,7 +1270,11 @@
         /* ============ RESPONSIVE ============ */
         @media (max-width: 1024px) {
             .hero-media {
+                top: 0;
+                left: 0;
+                right: 0;
                 width: 100%;
+                height: 100%;
                 clip-path: none;
                 opacity: 0.3;
             }
