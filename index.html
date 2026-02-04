@@ -150,6 +150,7 @@
             border: none;
             cursor: pointer;
             padding: 5px;
+            z-index: 1001;
         }
 
         .mobile-toggle span {
@@ -157,6 +158,70 @@
             height: 1.5px;
             background: var(--charcoal);
             transition: all 0.3s ease;
+        }
+
+        /* Mobile menu open state - hamburger transforms to X */
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--cream);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--terracotta);
+        }
+
+        .mobile-menu .mobile-cta {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            margin-top: var(--space-md);
+        }
+
+        .mobile-menu .mobile-cta:hover {
+            background: var(--terracotta);
         }
 
         /* ============ HERO - FULL BLEED VIDEO STYLE ============ */
@@ -1212,8 +1277,13 @@
                 padding: var(--space-sm) var(--space-md);
             }
 
-            .nav-links {
+            .nav-links,
+            .nav-cta {
                 display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
             }
 
             .hero-description,
@@ -1354,6 +1424,15 @@
             <span></span>
         </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about">About</a>
+        <a href="#pillars">The 5 M's</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#summit">Summit</a>
+        <a href="#subscribe" class="mobile-cta">Subscribe</a>
+    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -1702,6 +1781,25 @@
             } else {
                 nav.classList.remove('scrolled');
             }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // Reveal on scroll
