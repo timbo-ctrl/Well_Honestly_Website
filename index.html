@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Well, Honestly | Women's Wellness Without the Performance</title>
     <meta name="description"
         content="Honest conversations about women's health, ambition, and wellbeing. No prescriptions. No perfection. No performative self-care.">
@@ -50,10 +50,16 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
-            height: -webkit-fill-available; /* Safari mobile fix */
+            height: -webkit-fill-available;
+            background: var(--cream);
         }
 
         body {
@@ -63,7 +69,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
-            min-height: -webkit-fill-available; /* Safari mobile fix */
+            min-height: -webkit-fill-available;
         }
 
         ::selection {
