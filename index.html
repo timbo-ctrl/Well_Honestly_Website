@@ -246,14 +246,17 @@
             position: relative;
             overflow: hidden;
             background: var(--cream);
+            /* Extend into Safari safe area */
+            padding-top: env(safe-area-inset-top);
+            margin-top: calc(-1 * env(safe-area-inset-top));
         }
 
         .hero-media {
             position: absolute;
-            top: 0;
+            top: calc(-1 * env(safe-area-inset-top, 0px));
             right: 0;
             width: 55%;
-            height: 100%;
+            height: calc(100% + env(safe-area-inset-top, 0px));
             background: var(--cream);
             overflow: hidden;
             clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
