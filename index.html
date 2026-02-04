@@ -1204,12 +1204,23 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                font-size: 1rem;
+            }
+
             nav {
                 padding: var(--space-sm) var(--space-md);
             }
 
             .nav-links {
                 display: none;
+            }
+
+            .hero-description,
+            .about-content p,
+            .speaking-header p {
+                font-size: 1.0625rem;
+                line-height: 1.75;
             }
 
             .mobile-toggle {
@@ -1273,6 +1284,42 @@
 
             .hero-content {
                 padding: var(--space-2xl) var(--space-md);
+            }
+
+            /* Bump up text sizes for mobile readability */
+            .hero-description {
+                font-size: 1.125rem;
+            }
+
+            .intro-text {
+                font-size: 1.375rem;
+            }
+
+            .pillars-header p,
+            .newsletter-description,
+            .speaking-header p,
+            .about-content p {
+                font-size: 1.0625rem;
+            }
+
+            .pillar p,
+            .value-card p,
+            .topic p {
+                font-size: 1rem;
+            }
+
+            .featured-label,
+            .hero-eyebrow,
+            .pillars-eyebrow,
+            .about-eyebrow,
+            .summit-eyebrow {
+                font-size: 0.8125rem;
+            }
+
+            .speaking-format,
+            .footer-links a,
+            .footer-brand p {
+                font-size: 0.9375rem;
             }
         }
     </style>
