@@ -1290,6 +1290,20 @@
                 padding: var(--space-sm) var(--space-md);
             }
 
+            /* Ensure comfortable side margins on tablet/mobile */
+            .intro,
+            .pillars,
+            .newsletter,
+            .featured,
+            .about,
+            .speaking,
+            .summit,
+            .partnership,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
             .nav-links,
             .nav-cta {
                 display: none;
@@ -1378,19 +1392,21 @@
             }
 
             .hero-content {
-                padding: var(--space-2xl) var(--space-sm);
+                padding: var(--space-2xl) 20px;
             }
 
-            /* Reduce horizontal padding on mobile */
-            .newsletter,
-            .pillars,
+            /* Match side margins for all sections on small mobile */
             .intro,
+            .pillars,
+            .newsletter,
+            .featured,
+            .about,
             .speaking,
             .summit,
-            .about,
+            .partnership,
             footer {
-                padding-left: var(--space-sm);
-                padding-right: var(--space-sm);
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
             /* Bump up text sizes for mobile readability */
