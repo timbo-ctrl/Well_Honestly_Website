@@ -806,12 +806,15 @@
             margin: 0 auto var(--space-xl);
             overflow: hidden;
             position: relative;
+            touch-action: pan-y;
+            -webkit-overflow-scrolling: auto;
         }
 
         .speaking-carousel-track {
             display: flex;
             gap: var(--space-md);
             animation: speakingScroll 35s linear infinite;
+            pointer-events: none;
             width: max-content;
         }
 
