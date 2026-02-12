@@ -1288,21 +1288,33 @@
             .pillars,
             .featured,
             .summit,
-            .partnership {
-                padding-left: var(--space-md);
-                padding-right: var(--space-md);
+            .partnership,
+            .intro {
+                padding-left: var(--space-sm);
+                padding-right: var(--space-sm);
                 overflow-x: hidden;
+                max-width: 100vw;
+                box-sizing: border-box;
             }
 
             .newsletter-container,
             .about-container,
-            .speaking-container {
+            .speaking-container,
+            .newsletter-content,
+            .newsletter-value,
+            .newsletter-form-container {
                 max-width: 100%;
+                box-sizing: border-box;
                 overflow-x: hidden;
             }
 
             .newsletter-form-container {
-                padding: var(--space-lg) var(--space-md);
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .value-card {
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .partnership-container {
@@ -1363,36 +1375,39 @@
             .pillars,
             .featured,
             .summit,
-            .partnership {
-                padding-left: var(--space-md);
-                padding-right: var(--space-md);
+            .partnership,
+            .intro {
+                padding-left: var(--space-sm);
+                padding-right: var(--space-sm);
                 overflow-x: hidden;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            .hero-content {
+                padding: var(--space-2xl) var(--space-sm);
             }
 
             .newsletter-container,
             .about-container,
-            .speaking-container {
+            .speaking-container,
+            .newsletter-content,
+            .newsletter-value,
+            .newsletter-form-container {
                 max-width: 100%;
+                box-sizing: border-box;
                 overflow-x: hidden;
             }
 
             .value-card {
-                padding: var(--space-md);
+                padding: var(--space-sm);
                 box-sizing: border-box;
                 word-wrap: break-word;
+                max-width: 100%;
             }
 
             .newsletter-form-container {
-                padding: var(--space-lg) var(--space-md);
-                box-sizing: border-box;
-            }
-
-            .newsletter-content {
-                max-width: 100%;
-            }
-
-            .newsletter-value {
-                max-width: 100%;
+                padding: var(--space-lg) var(--space-sm);
             }
 
             /* Speaking carousel mobile fix */
