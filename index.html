@@ -385,23 +385,27 @@
             transform: scale(1);
         }
 
-        .pillar:hover {
+        .pillar:hover,
+        .pillar.glow {
             background: rgba(250, 247, 242, 0.12);
             transform: scale(1.08);
             z-index: 2;
         }
 
-        .pillar:hover .pillar-number {
+        .pillar:hover .pillar-number,
+        .pillar.glow .pillar-number {
             font-size: 4.5rem;
             color: var(--cream);
         }
 
-        .pillar:hover h3 {
+        .pillar:hover h3,
+        .pillar.glow h3 {
             font-size: 1.3rem;
             letter-spacing: 0.15em;
         }
 
-        .pillar:hover p {
+        .pillar:hover p,
+        .pillar.glow p {
             color: rgba(250, 247, 242, 0.85);
         }
 
@@ -1888,6 +1892,21 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
+
+        // Pillar glow on scroll
+        const pillars = document.querySelectorAll('.pillar');
+        const pillarGlow = () => {
+            pillars.forEach((pillar, index) => {
+                const pillarTop = pillar.getBoundingClientRect().top;
+                if (pillarTop < window.innerHeight - 60) {
+                    setTimeout(() => {
+                        pillar.classList.add('glow');
+                    }, index * 200);
+                }
+            });
+        };
+        window.addEventListener('scroll', pillarGlow);
+        window.addEventListener('load', pillarGlow);
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
