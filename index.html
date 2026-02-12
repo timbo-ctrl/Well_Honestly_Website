@@ -1282,6 +1282,29 @@
                 grid-template-columns: 1fr;
             }
 
+            .newsletter,
+            .speaking,
+            .about,
+            .pillars,
+            .featured,
+            .summit,
+            .partnership {
+                padding-left: var(--space-md);
+                padding-right: var(--space-md);
+                overflow-x: hidden;
+            }
+
+            .newsletter-container,
+            .about-container,
+            .speaking-container {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .newsletter-form-container {
+                padding: var(--space-lg) var(--space-md);
+            }
+
             .partnership-container {
                 flex-direction: column;
                 text-align: center;
@@ -1355,6 +1378,21 @@
 
             .value-card {
                 padding: var(--space-md);
+                box-sizing: border-box;
+                word-wrap: break-word;
+            }
+
+            .newsletter-form-container {
+                padding: var(--space-lg) var(--space-md);
+                box-sizing: border-box;
+            }
+
+            .newsletter-content {
+                max-width: 100%;
+            }
+
+            .newsletter-value {
+                max-width: 100%;
             }
 
             /* Speaking carousel mobile fix */
