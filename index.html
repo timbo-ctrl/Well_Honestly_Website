@@ -1333,6 +1333,48 @@
                 padding: var(--space-2xl) var(--space-md);
             }
 
+            /* Fix overflow on mobile */
+            .newsletter,
+            .speaking,
+            .about,
+            .pillars,
+            .featured,
+            .summit,
+            .partnership {
+                padding-left: var(--space-md);
+                padding-right: var(--space-md);
+                overflow-x: hidden;
+            }
+
+            .newsletter-container,
+            .about-container,
+            .speaking-container {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .value-card {
+                padding: var(--space-md);
+            }
+
+            /* Speaking carousel mobile fix */
+            .speaking-carousel {
+                overflow: hidden;
+            }
+
+            .speaking-carousel-track img {
+                height: 280px;
+            }
+
+            /* About image mobile fix */
+            .about-visual {
+                max-width: 100%;
+            }
+
+            .about-image {
+                min-height: 350px;
+            }
+
             /* Bump up text sizes for mobile readability */
             .hero-description {
                 font-size: 1.125rem;
