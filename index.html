@@ -805,12 +805,15 @@
         }
 
         .speaking-carousel {
-            width: 100%;
-            margin: 0 auto var(--space-xl);
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-bottom: var(--space-xl);
             overflow: hidden;
             position: relative;
             touch-action: pan-y;
             -webkit-overflow-scrolling: auto;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
         }
 
         .speaking-carousel-track {
