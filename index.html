@@ -810,8 +810,8 @@
             margin-bottom: var(--space-xl);
             overflow: hidden;
             position: relative;
-            touch-action: pan-y;
-            -webkit-overflow-scrolling: auto;
+            touch-action: pan-y pinch-zoom;
+            pointer-events: none;
             -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
             mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
         }
@@ -1319,7 +1319,6 @@
             .newsletter-form-container {
                 max-width: 100%;
                 box-sizing: border-box;
-                overflow-x: hidden;
             }
 
             .newsletter-form-container {
@@ -1410,7 +1409,6 @@
             .newsletter-form-container {
                 max-width: 100%;
                 box-sizing: border-box;
-                overflow-x: hidden;
             }
 
             .value-card {
@@ -1422,11 +1420,6 @@
 
             .newsletter-form-container {
                 padding: var(--space-lg) 1.5rem;
-            }
-
-            /* Speaking carousel mobile fix */
-            .speaking-carousel {
-                overflow: hidden;
             }
 
             .speaking-carousel-track img {
